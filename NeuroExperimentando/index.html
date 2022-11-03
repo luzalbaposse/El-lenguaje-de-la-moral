@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/ico" href="images/favicon.ico"/>
+		<link rel="manifest" href="assets/web/site.webmanifest"/>
+		<meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  	<link rel="manifest" href="assets/web/site.webmanifest"/>
+		<meta name="viewport" content="width=device-width"/>
+    <meta name="twitter:site" content="@luzalbaposse"/>
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:title" content="NeuroExperimentando"/>
+		<meta name="twitter:description" content="Experimento sobre la el impacto del lenguaje en nuestra moral"/>
+		<meta name="twitter:image" content="images/portada.png"/>
+    <title>NeuroExperimentando</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+        background-color: #3B0015;
+        z-index: -999;
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .container {
+        max-width: 80rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+    }
+    
+    nav {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 50;
+    }
+    
+    nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 6rem;
+    }
+    
+    .logo {
+        max-width: 250px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .links ul {
+        display: flex;
+    }
+    
+    .links a {
+        display: inline-block;
+        padding: 0.7rem 1.2rem;
+        margin-right: 0.6rem;
+        color: #ffffff;
+        font-size: 1.05rem;
+        font-weight: 500;
+        line-height: 1;
+        border-radius: 1.5rem;
+        transition: 0.3s;
+    }
+    
+    .links a.active,
+    .links a:hover {
+        color: #3B0015;
+        background: #ffffff;
+    }
+    
+    .hero {
+        background: linear-gradient(#EC8C98, #8C2962);
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .hero img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+    }
+    
+    .hero #base {
+        z-index: 6;
+    }
+    
+    .hero #text {
+        position: absolute;
+        color: #fefefe;
+        font-size: clamp(3rem, 7.5vw, 8rem);
+        white-space: nowrap;
+        letter-spacing: 3px;
+        z-index: 5;
+        right: -850px;
+    }
+    
+    #btn {
+        font-size: 18px;
+        position: absolute;
+        color: #fefefe;
+        text-decoration: none;
+        padding: 8px 30px;
+        display: inline-block;
+        border: 2px solid #fefefe;
+        border-radius: 25px;
+        background: transparent;
+        z-index: 7;
+        letter-spacing: 0.51px;
+        transform: translateY(200px);
+    }
+    
+    .section-padding {
+        padding: 80px 0;
+        background: #fefefe;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    
+    .contacto {
+        text-align: center;
+        background-color: #3B0015;
+    }
+    
+    .sobreelexperimento {
+        text-align: center;
+        background-color: #3B0015;
+    }
+    
+    .left-content,
+    .right-content {
+        padding: 2rem;
+    }
+    
+    h4 {
+        font-weight: 700;
+        letter-spacing: 0.51px;
+        line-height: 1.35;
+        color: #ffffff;
+        font-size: 1.75rem;
+    }
+    
+    h1 {
+        font-weight: 700;
+        letter-spacing: 0.51px;
+        line-height: 1.35;
+        color: #ffffff;
+        font-size: 3rem;
+        text-align: center;
+    }
+    
+    .heading {
+        font-size: 1.15rem;
+        color: #0b0235;
+        margin-bottom: 0.5rem;
+    }
+    
+    p {
+        color: #ffffff;
+        font-size: 2rem;
+        margin: 5%;
+        padding-bottom: 0.5rem;
+        padding-right: 0.5rem;
+        text-align: center;
+    }
+    
+    footer {
+        background: #3B0015;
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    footer img {
+        max-width: 400px;
+    }
+    
+    @media (max-width:992px) {
+        .links ul {
+            display: none;
+        }
+        h4 {
+            font-size: 1.5rem;
+        }
+        .heading {
+            font-size: 1rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+        .left-content,
+        .right-content {
+            padding: 0.4rem;
+        }
+    }
+  
+</style>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logoMoral.png" alt="">
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#" class="active">Participar</a></li>
+                    <li>
+                        <a href="#SobreElExperimento">Sobre el experimento</a>
+                    </li>
+                    <li><a href="#Equipo">Equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <section class="hero" id="intro">
+        <img src="images/1.png" class="translateX" data-speed="0.25" id="moon" alt="">
+        <img src="images/nube.png" class="translateY" data-speed="0.35" id="clouds" alt="">
+        <img src="images/montaña.png" class="translateY" data-speed="0.15" id="mount" alt="">
+        <h1 id="text" class="translateX" data-speed="-3">El Dilema del Tranvía</h1>
+        <a href="https://www.psytoolkit.org/c/3.4.2/survey?s=ATN4k" id="btn">👉 Participar 👈</a>
+        <img src="images/cuatro.png" class="translateY" data-speed="0" id="base" alt="">
+    </section>
+    <section class="sobreelexperimento" id="SobreElExperimento">
+        <h1>
+            🤓 ¿Estás para experimentar con nosotros?
+        </h1>
+        <p>
+          Lo único que necesitamos para nuestra investigación es que si participás del experimento, <br> seas <b>bilingüe</b> y hablés <b>español</b> e <b>inglés</b> 👌
+        </p>
+    </section>
+<section class = "equipo" id="Equipo">
+  <h1>👥 Equipo</h1>
+  <p>Somos 4 alumnos de la materia <b>Neurociencia y Psicología Experimental de la Universidad Torcuato Di Tella 👩‍🔬</b>.Las personas detrás de esto son: Julián Blanco (Lic. en Tecnología Digital), Bautista Kugler (Lic. en Tecnología Digital), Sarah Solivella Lamas (Estudios Internacionales) y Luz Alba Posse (Lic. en Tecnología Digital). </p>
+</section>
+      <section class="contacto" id="contacto">
+        <h1>📞 Contacto</h1>
+        <p>
+            Si querés enterarte de los resultados de nuestra investigación, no dudes en enviarnos un mail a 📧 <b>malbaposse@mail.utdt.edu</b> <br> ¡Gracias por participar! 😁 <br>
+        </p>
+    </section>
+    <footer>
+        <div class="container">
+            <a href="#">
+                <img src="images/logoMoral.png" alt="">
+            </a>
+        </div>
+    </footer>
+    <script>
+        const translateX = document.querySelectorAll(".translateX");
+        const translateY = document.querySelectorAll(".translateY");
+        window.addEventListener("scroll", () => {
+            let scroll = window.pageYOffset;
+            translateX.forEach(element => {
+                let speed = element.dataset.speed;
+                element.style.transform = `translateX(${scroll * speed}px)`;
+            })
+            translateY.forEach(element => {
+                let speed = element.dataset.speed;
+                element.style.transform = `translateY(${scroll * speed}px)`;
+            })
+        })
+    </script>
+</body>
+
+</html>
+
+</html>
